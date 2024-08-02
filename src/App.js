@@ -17,29 +17,6 @@ function App() {
     localStorage.setItem('tasks', JSON.stringify(item))
   }
    
-  // const addNewTask = (newTask) => {
-  //   const storedTasks = getStoredTasks();
-  //   const updatedTasks = [...storedTasks, newTask];
-  //   setStorageItem(updatedTasks);
-  //   setTasks(updatedTasks);
-  //   console.log(updatedTasks);
-  // }
-
-  // const deleteTask = (taskToDelete) => { 
-  //   const storedTasks = getStoredTasks();
-  //   const updatedTasks = storedTasks.filter(task => task.id !== taskToDelete.id);
-  //   setTasks(updatedTasks);
-  //   setStorageItem(updatedTasks);
-
-  // }
-
-  // const updateTask = (editedTask) => {
-  //   const storedTasks = getStoredTasks();
-  //   const updatedTasks = storedTasks.map(task => task.id === editedTask.id ? editedTask : task)
-  //   setTasks(updatedTasks);
-  //   setStorageItem(updatedTasks);
-  //   setEditingTask(null)
-  // }
   const updateTask = ( stored, edited ) => {
       setEditingTask(null)
       return stored.map(task => task.id === edited.id ? edited : task)
@@ -68,14 +45,12 @@ function App() {
   return (
     <div className="App">
       <h1>My tasks today</h1>
-      {/* <TaskForm addTask={addNewTask}/> */}
       <TaskForm addTask={(newTask) => handleData(newTask, addNewTask)}/>
 
       <hr/>
       {
         tasks.length > 0
         ? 
-          // <TaskList tasks={tasks} deleteTask={deleteTask} editTask={setEditingTask}/>
           <TaskList 
           tasks={tasks} 
           deleteTask={(task) =>  handleData(task, deleteTask)} 
@@ -88,7 +63,6 @@ function App() {
         <EditTaskModal
           closeModal={() => setEditingTask(null)}
           textToChange={editingTask.body}
-          // save={(text) => updateTask({...editingTask, body: text})}
           save={(text) => handleData({...editingTask, body: text}, updateTask)}
         />
       )
