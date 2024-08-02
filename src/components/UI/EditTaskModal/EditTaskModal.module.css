@@ -1,0 +1,38 @@
+.modal__bg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #00000050;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal__body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 600px;
+    border-radius: 15px;
+    min-height: 200px;
+    padding: 20px;
+    background-color: #fff;
+}
+
+.modal__text {
+    padding: 5px;
+    flex-grow: 1;
+    border: 2px solid lightblue;
+    border-radius: 5px;
+    resize: none;
+    height: auto;
+    overflow: hidden;
+}
+
+.modal__text:focus {
+    outline: none;
+}

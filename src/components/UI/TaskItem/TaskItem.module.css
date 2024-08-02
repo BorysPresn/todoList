@@ -1,0 +1,48 @@
+.item__body {
+    display: flex;
+    gap: 5px;
+    padding: 5px 0;
+    align-items: flex-start;
+    flex-grow: 0;
+}
+
+.item__content {
+    flex-grow: 1;
+    word-break: break-all;
+    line-height: 1.65;
+    height: 100%;
+}
+.button__wrapper {
+    display: flex;
+    white-space: nowrap;
+    flex-wrap: nowrap;
+    flex-shrink: 0;
+    gap: 5px;
+    align-items: center;
+}
+input[type='checkbox'] {
+    vertical-align: middle;
+    margin-right: 3px;
+    cursor: pointer;
+}
+
+li {
+    margin-bottom: 0.5em;
+}
+li.done {
+    background-color: lightgreen;
+    position: relative;
+
+}
+
+li.done::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 2px;
+    width: 100%;
+    background-color: gray;
+    z-index: 1;
+}
