@@ -1,18 +1,16 @@
-import React, { useState } from 'react'
+import React, { StrictMode, useState } from 'react'
 import TaskForm from './components/TaskForm';
 import TaskList from './components/TaskList';
 import './styles/App.css'
 import EditTaskModal from './components/UI/EditTaskModal/EditTaskModal';
 
 function App() {
-  const [tasks, setTasks] = useState(() => {
-    const storedTasks = getStoredTasks();
-    return storedTasks ? storedTasks : [];
-  });
+  const [tasks, setTasks] = useState(getStoredTasks);
   const [editingTask, setEditingTask] = useState(null);
   
   function getStoredTasks() {
-    return JSON.parse(localStorage.getItem('tasks'))
+    const storedTasks = localStorage.getItem('tasks');
+    return storedTasks ? JSON.parse(storedTasks) : [];
   }
 
   function setStorageItem(item){
