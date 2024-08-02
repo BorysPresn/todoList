@@ -5,7 +5,10 @@ import './styles/App.css'
 import EditTaskModal from './components/UI/EditTaskModal/EditTaskModal';
 
 function App() {
-  const [tasks, setTasks] = useState(getStoredTasks);
+  const [tasks, setTasks] = useState(() => {
+    const storedTasks = getStoredTasks();
+    return storedTasks ? storedTasks : [];
+  });
   const [editingTask, setEditingTask] = useState(null);
   
   function getStoredTasks() {
@@ -72,7 +75,7 @@ function App() {
 
       <hr/>
       {
-        tasks.length 
+        tasks.length > 0
         ? 
           // <TaskList tasks={tasks} deleteTask={deleteTask} editTask={setEditingTask}/>
           <TaskList 
