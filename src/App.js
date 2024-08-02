@@ -1,4 +1,4 @@
-import React, { StrictMode, useState } from 'react'
+import React, { useState } from 'react'
 import TaskForm from './components/TaskForm';
 import TaskList from './components/TaskList';
 import './styles/App.css'
@@ -18,6 +18,7 @@ function App() {
   }
    
   const updateTask = ( stored, edited ) => {
+
       setEditingTask(null)
       return stored.map(task => task.id === edited.id ? edited : task)
     }

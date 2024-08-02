@@ -31,8 +31,23 @@
     resize: none;
     height: auto;
     overflow: hidden;
+    transition: border-color 0.3s ease;
 }
 
 .modal__text:focus {
     outline: none;
+}
+
+.text_edit__container {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+
+}
+.error_text {
+    border: 2px solid red;
+}
+.error {
+    color: red;
+    font-size: .8em;
 }
