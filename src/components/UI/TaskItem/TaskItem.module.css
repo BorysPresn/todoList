@@ -1,7 +1,6 @@
 .item__body {
     display: flex;
     gap: 5px;
-    padding: 5px 0;
     align-items: flex-start;
     flex-grow: 0;
 }
@@ -27,22 +26,11 @@ input[type='checkbox'] {
 }
 
 li {
-    margin-bottom: 0.5em;
+    /* margin-bottom: 0.5em; */
+    padding: .33em;
 }
 li.done {
     background-color: lightgreen;
     position: relative;
 
-}
-
-li.done::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    height: 2px;
-    width: 100%;
-    background-color: gray;
-    z-index: 1;
 }
